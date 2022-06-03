@@ -1,0 +1,12 @@
+<div class="h-screen" [ngSwitch]="(currentTab | async)">
+    <div *ngSwitchCase="1">
+        <div *ngFor="let repo of (repos | async)">
+            <app-repo-card *ngIf="repo.homepage != null" [repo]="repo"></app-repo-card>
+        </div>
+    </div>
+    <app-contact *ngSwitchCase="2"></app-contact>
+    <div *ngSwitchCase="3">
+
+    </div>
+    <div *ngSwitchDefault>output2</div>
+</div>
