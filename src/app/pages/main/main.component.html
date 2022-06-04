@@ -1,12 +1,13 @@
-<div class="h-screen" [ngSwitch]="(currentTab | async)">
-    <div *ngSwitchCase="1">
-        <div *ngFor="let repo of (repos | async)">
-            <app-repo-card *ngIf="repo.homepage != null" [repo]="repo"></app-repo-card>
-        </div>
-    </div>
-    <app-contact *ngSwitchCase="2"></app-contact>
-    <div *ngSwitchCase="3">
+<app-header></app-header>
+<div class="h-screen mt-5" [ngSwitch]="(currentTab | async)">
+    <app-about-me *ngSwitchCase="1"></app-about-me>
 
+    <app-portfolio *ngSwitchCase="2"></app-portfolio>
+    <app-contact *ngSwitchCase="3"></app-contact>
+
+    <div *ngSwitchDefault>
+        Somehow you got into the default case.
+        Select an option in the navbar to go back to normal
     </div>
-    <div *ngSwitchDefault>output2</div>
 </div>
+<!-- <app-footer *ngIf="!(isFooterHidden | async)"></app-footer> -->
