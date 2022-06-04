@@ -8,10 +8,19 @@ import { IRepository } from 'src/app/interfaces/repository';
 })
 export class RepoCardComponent implements OnInit {
 
-  @Input() repo: IRepository | undefined
+  @Input()
+  repo!: IRepository;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  returnValidUrl(repo: IRepository): string {
+    if (typeof repo.homepage === "string") {
+      return repo.homepage;
+    }
+    else {
+      return repo.html_url;
+    }
+  }
 }
