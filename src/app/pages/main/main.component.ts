@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IRepository } from 'src/app/interfaces/repository';
-import { ApiService } from 'src/app/services/api.service';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -11,12 +9,12 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService) { }
 
-  repos: Observable<IRepository[]> | undefined
   currentTab: Observable<number> | undefined;
+  isFooterHidden: Observable<boolean> | undefined
   ngOnInit(): void {
-    this.repos = this.apiService.getRepos();
     this.currentTab = this.sharedService.currentTab$;
+    this.isFooterHidden = this.sharedService.isFooterHidden$
   }
 }
