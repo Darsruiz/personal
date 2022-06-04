@@ -1,10 +1,12 @@
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700 ">
-    <ul class="flex flex-row -mb-px text-sm font-medium text-center">
-        <li *ngFor="let tab of tabInfo | async as list">
+<div>
+    <ul class="grid grid-cols-3 -mb-px text-sm font-medium text-center">
+        <li *ngFor="let tab of tabInfo | async as list" class="col-span-1 border-b border-black">
             <button
-                class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 aria-selected:bg-blue-200 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 dark:border-blue-500"
+                class="p-4 text-black rounded-sm aria-selected:hidden hover:text-black dark:text-black dark:hover:text-black dark:border-black"
                 type="button" (click)="setCurrentTab(tab.id)"
-                [attr.aria-selected]="tab.id == (currentTab | async) ? 'true' : 'false' ">{{tab.title}}</button>
+                [attr.aria-selected]="tab.id == (currentTab | async) ? 'true' : 'false' ">
+                {{tab.title}}
+            </button>
         </li>
     </ul>
 </div>
