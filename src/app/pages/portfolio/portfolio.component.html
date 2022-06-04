@@ -1,0 +1,57 @@
+<div>
+    <p class="p-4 text-3xl">
+        Starred Projects
+    </p>
+    <div class="grid grid-cols-1 mx-12 ">
+        <div class="grid grid-cols-2 col-span-1 mb-4 irina-colors">
+            <div class="col-span-1">
+                <a href="https://styled-by-irina.web.app"><img src="/assets/images/styled-by-irina.webp"
+                        alt="main_page_snapshot"></a>
+            </div>
+            <div class="grid col-span-1 prose text-center place-items-center">
+                <p class="p-4 text-6xl">
+                    Styled By Irina
+                </p>
+                <div>
+                    <p>A site made for a catalan fashion influencer.</p>
+                    <p>Built with Angular Routing, Tailwind, MailChimp API, Firebase</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-span-1 pt-4 my-12 border border-orange-400">
+            <a class="grid place-items-center" href="https://quecomemoshoy-1.web.app/"><img
+                    class="object-scale-down h-44" src="/assets/images/que-comemos-hoy.jpg" alt="main_page_snapshot">
+                <p class="mb-2">A site created while on the Bootcamp </p>
+                <p class="mb-2">This app gets you a list of recipes and ingredients depending on
+                    your diet, then gives you a recipe for each meal and each day</p>
+                <p>Built with Angular, Tailwind, Firebase, PWA </p>
+
+            </a>
+        </div>
+        <div class="grid grid-cols-2 col-span-1 botlane-carry-colors">
+            <div class="grid col-span-1 prose text-center place-items-center">
+                <p class="p-4 text-6xl text-white">
+                    BotlaneCarry
+                </p>
+                <div class="mx-4">
+                    <p class="text-white">My first site ever created, displays information of the champions of League of
+                        Legends</p>
+                    <p class="text-white">Built with Angular Routing, Angular Material, Riot Games API, Firebase, PWA
+                    </p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <a href="https://botlanecarry.web.app/"><img src="/assets/images/botlane-carry.webp"
+                        alt="main_page_snapshot"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p class="p-4">All Projects</p>
+    <div class="grid h-screen grid-cols-2 gap-4 md:grid-cols-6">
+        <app-repo-card class="col-span-2" *ngFor="let repo of repos | async as list" [repo]="repo"></app-repo-card>
+    </div>
+</div>
